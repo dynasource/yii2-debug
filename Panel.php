@@ -129,7 +129,7 @@ class Panel extends Component
         if ($this->module->traceLink === null) {
             return $options['text'];
         }
-        if (is_callable($this->module->traceLink)) {
+        if ($this->module->traceLink instanceof \Closure) {
             return call_user_func($this->module->traceLink, $options, $this);
         }
         if (is_string($this->module->traceLink)) {
